@@ -24,9 +24,15 @@ RUN docker run -d \
     -p 3001:3001 \
     --name uptime-kuma \
     --restart always \
+    -e UPTIME_KUMA_DB_HOSTNAME \
+    -e UPTIME_KUMA_DB_NAME \
+    -e UPTIME_KUMA_DB_PASSWORD \
+    -e UPTIME_KUMA_DB_PORT \
+    -e UPTIME_KUMA_DB_TYPE \
+    -e UPTIME_KUMA_DB_USERNAME \
     chipsman/uptime-kuma
 
-# 等待服务启动
-# RUN sleep 10
+# 等待服务启动并检查日志
+RUN sleep 15 && docker logs uptime-kuma
 
 EXPOSE WEBSITE http://localhost:3001
