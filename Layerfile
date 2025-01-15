@@ -24,12 +24,6 @@ RUN docker run -d \
     -p 3001:3001 \
     --name uptime-kuma \
     --restart always \
-    -e "UPTIME_KUMA_DB_HOSTNAME=$UPTIME_KUMA_DB_HOSTNAME" \
-    -e "UPTIME_KUMA_DB_NAME=$UPTIME_KUMA_DB_NAME" \
-    -e "UPTIME_KUMA_DB_PASSWORD=$UPTIME_KUMA_DB_PASSWORD" \
-    -e "UPTIME_KUMA_DB_PORT=$UPTIME_KUMA_DB_PORT" \
-    -e "UPTIME_KUMA_DB_TYPE=$UPTIME_KUMA_DB_TYPE" \
-    -e "UPTIME_KUMA_DB_USERNAME=$UPTIME_KUMA_DB_USERNAME" \
     chipsman/uptime-kuma
 
 # 等待服务启动
